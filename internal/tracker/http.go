@@ -73,6 +73,9 @@ func parseHTTPResponse(body []byte) (*Response, error) {
 		r.Interval = time.Duration(iv) * time.Second
 	}
 	if n, ok := d["complete"].(int64); ok {
+		r.Seeders = int(n)
+	}
+	if n, ok := d["incomplete"].(int64); ok {
 		r.Leechers = int(n)
 	}
 
