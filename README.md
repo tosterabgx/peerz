@@ -11,3 +11,5 @@ A TUI BitTorrent client, written in Go.
 
 Download the binary for your system from the
 [Releases page](https://github.com/tosterabgx/peerz/releases).
+
+> btw, you can test it on torrents from testdata folder!
