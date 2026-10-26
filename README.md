@@ -1,8 +1,8 @@
-![peerz downloading two torrents](demo.gif)
-
 # peerz
 
 A TUI BitTorrent client, written in Go.
+
+![peerz downloading two torrents](demo.gif)
 
 > peerz can download public torrents end to end, but it's young.
 > It does not support DHT, PEX or magnet links for now.
