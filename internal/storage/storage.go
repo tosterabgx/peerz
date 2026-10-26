@@ -126,7 +126,6 @@ func (s *Storage) RunWriter(jobs <-chan WriteJob, results chan<- WriteResult) {
 		case int64(len(job.Data)) != s.PieceSize(job.Index):
 			r.Err = fmt.Errorf("storage: piece %d has wrong size %d", job.Index, len(job.Data))
 		case sha1.Sum(job.Data) != s.hashes[job.Index]:
-			// bad data from a peer: OK stays false, Err stays nil
 		default:
 			r.Err = s.WriteAt(job.Data, int64(job.Index)*s.pieceLen)
 			r.OK = r.Err == nil

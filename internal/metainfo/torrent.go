@@ -89,6 +89,7 @@ func Parse(data []byte) (*Torrent, error) {
 				return nil, errors.New("metainfo: bad file entry")
 			}
 			var file File
+			file.Path = []string{t.Name}
 			file.Length, _ = fm["length"].(int64)
 			for _, p := range fm["path"].([]any) {
 				if s, ok := p.(string); ok {
